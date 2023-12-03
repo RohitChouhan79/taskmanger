@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400|Inconsolata:400');
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,body{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  flex-direction: column;
+  background-color: rgb(213, 226, 237);
+}
+
+.upper-task{
+  margin-top: 4%;
+  margin-bottom: 3%;
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  width: 30%;
+  height: 15%;
+  background-color: rgb(216, 246, 246);
+  padding: 10px;
+}
+
+.upper-task h4{
+  font-size: 40px;
+  margin-bottom: 2%;
+  letter-spacing: 10px;
+}
+
+.upper-task .form-control input{
+  width: 70%;
+  padding: 5px;
+
+}
+
+.submit-btn{
+  padding: 5px 15px;
+  background-color: rgb(57, 57, 248);
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+}
