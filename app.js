@@ -7,7 +7,7 @@ var logger = require('morgan');
 
 // db connection
 require("./models/config");
-const Task = require("./models/userModel");
+const User = require("./models/userModel");
 const passport=require("passport")
 const session=require("express-session")
 // const flash=require("connect-flash")
@@ -36,8 +36,8 @@ app.use(
 )
 app.use(passport.initialize());
 app.use(passport.session())
-passport.serializeUser(Task.serializeUser());
-passport.deserializeUser(Task.deserializeUser());
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

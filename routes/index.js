@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const User = require('../models/userModel');
+const task=require("../models/taskModel")
 
 const passport=require("passport")  
 const LocalStrategy=require("passport-local")
@@ -27,6 +28,7 @@ router.post('/signup',async function(req, res, next) {
     },req.body.password);
     res.redirect("/login")
   } catch (error) {
+    console.log(error,'signup error')
     res.send(error)
   }
 });
@@ -35,13 +37,7 @@ router.get('/login', function(req, res, next) {
   res.render('login',{admin:req.user});
 });
 
-router.post('/login',
-  passport.authenticate("local",{
-    successRedirect:"/profile",
-    failureRedirect:"/sigin"
-  }),
-  function(req,res,next){}
-);
+
 
 router.get('/forget', function(req, res, next) {
   res.render('forgetpasword',{admin:req.user});
@@ -84,25 +80,26 @@ router.post('/forget/:id', async function(req, res, next) {
 router.post(
   "/login",
   passport.authenticate("local", {
-      successRedirect: "/profile",
+      successRedirect: "/index",
       failureRedirect: "/login",
   }),
   function (req, res, next) {}
 )
 
-router.get('/profile', async function(req, res, next) {
+router.get('/index', async function(req, res, next) {
   try {
-    const task=await userModel.find();
+    const task=await User.find();
   res.render('index',{task:task});
     
   } catch (error) {
+    console.log(error)
     res.send(error)
   }
 });
 
 router.post('/task', async function(req, res, next) {
   try {
-    const task = await userModel(req.body);
+    const task = await task(req.body);
     await task.save();
     res.redirect('/')
   } catch (error) {
