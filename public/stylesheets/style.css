@@ -1,0 +1,45 @@
+body{
+  text-align:center;
+   background-image:url(https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDA1MTYxNzV8&ixlib=rb-4.0.3&q=80&w=400);
+  background-repeat:no-repeat;
+   background-size:cover;
+ }
+ .button{
+   
+   padding: 100px 0;
+   
+   
+ }
+ h1{
+  
+   margin-top:100px;
+   font-size:120px;
+   
+ 
+   
+ }
+ button{
+   
+   background-color:#FF7043;
+   border:none;
+   padding:20px 60px;
+   margin-left:23px;
+   border-radius:10px;
+   font-size:30px;
+   font-family:Arial;
+ }
+
+ button a{
+  text-decoration: none;
+  color: black;
+ }
+ button:hover{
+   box-shadow:1px 1px 1px orange;
+   background-color:#FF8A65;
+   cursor:pointer;
+ }
+ 
+
+ .form-gap {
+  padding-top: 70px;
+}
