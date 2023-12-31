@@ -31,4 +31,3 @@ exports.sendmail=function sendmailhandler(email, user,req, res) {
   
     });
   }
-
