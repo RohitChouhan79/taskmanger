@@ -29,12 +29,19 @@
   <section class="tasks-container">
     <!-- <p class="loading-text">Loading...</p> -->
     <div class="tasks">
-      <%task.forEach(function(ta){%>
-        <h1><%= ta.name%></h1>
-        <a href="">Delete</a>  
-      <a href="">Update</a>
-      <%})%>
+      <% if(!task && task.length > 0){ %>
+        <h1>Loding....</h1>
       
+      <%}else{%>
+        <%task.forEach(function(ta){%>
+          <h1><%= ta.name %></h1>
+          <a href="/delete/<%=ta._id%>">Delete</a>  
+         <a href="/update/<%=ta._id%>">Update</a>
+        <%})%>
+        
+      <%}%>
+      
+                                                     
     </div>
   </section>
   <!-- axios -->

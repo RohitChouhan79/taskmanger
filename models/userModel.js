@@ -23,7 +23,7 @@ const TaskSchema = new mongoose.Schema({
     type: String,
     default: -1,
   },
-  task: {type:mongoose.Schema.ObjectId,ref:"task"}
+  task:[ {type:mongoose.Schema.ObjectId,ref:"task"}]
 },{timestamps:true})
 
 
