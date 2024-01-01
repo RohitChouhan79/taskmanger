@@ -99,7 +99,7 @@ router.get('/index', isLoggedIn, async function (req, res, next) {
   try {
     const { task } = await req.user.populate("task");
     console.log(task)
-    res.render('index', { task:task });
+    res.render('index', { task:task, admin: req.user});
 
   } catch (error) {
     console.log(error)
@@ -137,7 +137,7 @@ router.get("/delete/:id", isLoggedIn, async function (req, res, next) {
 
 router.get('/update/:id',isLoggedIn,async function(req,res,next){
   const taskData= await Task.findById(req.params.id)
-  res.render("update",{taskData:taskData})
+  res.render("update",{taskData:taskData,admin:req.user})
 })
 
 router.post("/update/:id",isLoggedIn,async function(req,res,next){
@@ -151,5 +151,12 @@ router.post("/update/:id",isLoggedIn,async function(req,res,next){
   }
 })
 
+
+router.get('/signout', isLoggedIn, function(req, res, next) {
+  req.logOut(()=>{
+    res.redirect('/login');
+  })
+  // res.render('about',);
+});
 
 module.exports = router;

@@ -16,6 +16,8 @@
 </head>
 
 <body>
+  <%- include("./partials/nav")%>
+
   <div class="upper-task">
     <form method="post" action="/update/<%= taskData._id %>" class="task-form">
       <h4>Task Manager</h4>
